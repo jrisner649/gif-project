@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddGifModalComponent } from '../add-gif-modal/add-gif-modal.component';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,7 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './top-bar.component.css',
 })
 export class TopBarComponent {
+  dialog = inject<MatDialog>(MatDialog);
+
   onClick() {
-    alert('hello')
+    this.dialog.open(AddGifModalComponent);
   }
+
 }
