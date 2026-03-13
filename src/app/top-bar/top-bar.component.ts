@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './top-bar.component.css',
 })
 export class TopBarComponent {
-  onClick() {
-    alert('hello')
-  }
+  
+
 }

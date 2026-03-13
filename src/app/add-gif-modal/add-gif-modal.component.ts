@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './add-gif-modal.component.html',
   styleUrl: './add-gif-modal.component.css',
 })
-export class AddGifModalComponent {}
+export class AddGifModalComponent {
+  
+}
