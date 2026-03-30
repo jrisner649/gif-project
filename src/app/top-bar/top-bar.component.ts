@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { AddGifModalComponent } from '../add-gif-modal/add-gif-modal.component';
-import * as bootstrap from 'bootstrap';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
