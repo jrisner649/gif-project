@@ -4,8 +4,9 @@
 html {
   color-scheme: light dark;
   @include mat.theme((
-    color: mat.$red-palette,
+    color: mat.$cyan-palette,
     typography: Roboto,
     density: 0
   ));
+
 }
