@@ -8,11 +8,15 @@ import {
   MatDialogClose,
   MatDialogTitle
 } from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
   selector: 'app-add-gif-modal',
-  imports: [FormsModule, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule, MatDialogTitle],
+  imports: [FormsModule, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule, MatDialogTitle, MatFormFieldModule, MatInputModule],
   templateUrl: './add-gif-modal.component.html',
   styleUrl: './add-gif-modal.component.scss',
 })
-export class AddGifModalComponent {}
+export class AddGifModalComponent {
+  link: string = '';
+}
