@@ -1,14 +1,18 @@
 import { AfterViewInit, Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import {
+  MatDialog,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogTitle
+} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-gif-modal',
-  imports: [FormsModule],
+  imports: [FormsModule, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule, MatDialogTitle],
   templateUrl: './add-gif-modal.component.html',
-  styleUrl: './add-gif-modal.component.css',
+  styleUrl: './add-gif-modal.component.scss',
 })
-export class AddGifModalComponent {
-  @ViewChild('addGIFModal') modalRef!: ElementRef;
-
-  linkInputValue: string = '';
-}
+export class AddGifModalComponent {}

@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-root',
   imports: [RouterOutlet, TopBarComponent, FormsModule],
   templateUrl: './app.html',
-  styleUrl: './app.css',
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('gif-project');
