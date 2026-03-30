@@ -1,10 +1,3 @@
 @use '@angular/material' as mat;
-@use 'sass:map';
 
-// Extract cyan color from the palette (using tone 40 for a vibrant cyan)
-$cyan-color: map.get(mat.$cyan-palette, 80);
 
-// Apply cyan outline to the dialog
-::ng-deep .mat-mdc-dialog-container {
-  border: 3px solid $cyan-color;
-}

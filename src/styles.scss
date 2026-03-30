@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
+@use 'sass:map';
+
 
 html {
   color-scheme: light dark;
@@ -9,4 +11,13 @@ html {
     density: 0
   ));
 
+}
+
+// Extract cyan color from the palette (using tone 40 for a vibrant cyan)
+$cyan-color: map.get(mat.$cyan-palette, 80);
+
+// Apply cyan outline to the dialog
+.mat-mdc-dialog-container {
+  border: 3px solid $cyan-color;
+  border-radius: 32px;
 }
