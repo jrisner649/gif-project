@@ -6,11 +6,12 @@ import {
   MatDialogContent,
   MatDialogActions,
   MatDialogClose,
+  MatDialogTitle
 } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-gif-modal',
-  imports: [FormsModule, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule],
+  imports: [FormsModule, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule, MatDialogTitle],
   templateUrl: './add-gif-modal.component.html',
   styleUrl: './add-gif-modal.component.scss',
 })
