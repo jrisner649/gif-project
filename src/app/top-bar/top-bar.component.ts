@@ -3,17 +3,16 @@ import { AddGifModalComponent } from '../add-gif-modal/add-gif-modal.component';
 import * as bootstrap from 'bootstrap';
 import { MatDialog } from '@angular/material/dialog';
 
-
 @Component({
   selector: 'app-top-bar',
   imports: [AddGifModalComponent],
   templateUrl: './top-bar.component.html',
-  styleUrl: './top-bar.component.css',
+  styleUrl: './top-bar.component.scss',
 })
 export class TopBarComponent {
   dialog = inject(MatDialog);
-  
-   onAddGIF() {
+
+  onAddGIF() {
     this.dialog.open(AddGifModalComponent);
   }
 }

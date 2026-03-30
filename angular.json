@@ -10,7 +10,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "type": "component"
+          "type": "component",
+          "style": "scss"
         },
         "@schematics/angular:directive": {
           "type": "directive"
@@ -34,7 +35,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["node_modules/bootstrap/scss/bootstrap.scss", "src/styles.css"],
+            "styles": ["node_modules/bootstrap/scss/bootstrap.scss", "src/styles.scss"],
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
           },
           "configurations": {
