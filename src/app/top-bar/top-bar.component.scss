@@ -1,0 +1,9 @@
+@use '@angular/material' as mat;
+
+:host {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 25px;
+}
+
+
