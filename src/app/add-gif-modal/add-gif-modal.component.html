@@ -4,15 +4,18 @@
     <mat-form-field style="flex: 1">
 
         <mat-label>Copy/paste GIF link</mat-label>
-        <input matInput type="text" [(ngModel)]="link">
+        <input matInput type="text" [(ngModel)]="userInput" (input)="updateImageUrl()">
     </mat-form-field>
   </div>
+    @if (isImageValid && userInput) {
       <img
-        [src]="link + '.gif'"
+        [src]="imageUrl"
+        (error)="onImageError()"
       >
+    }
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button matButton="outlined" mat-dialog-close>Cancel</button>
-  <button matButton="filled" [mat-dialog-close]="true" cdkFocusInitial>Confirm</button>
+  <button matButton="filled" [mat-dialog-close]="true" (click)="onAddGif()" cdkFocusInitial>Confirm</button>
 </mat-dialog-actions>
