@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from "./dashboard/dashboard.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TopBarComponent, FormsModule],
+  imports: [RouterOutlet, TopBarComponent, FormsModule, DashboardComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
