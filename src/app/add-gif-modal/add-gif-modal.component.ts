@@ -32,6 +32,7 @@ export class AddGifModalComponent {
   }
 
   onAddGif() {
-    AddGifService.writeGif();
+    const url: string = "https://tenor.com/view/phalanx-gif-21949743";
+    AddGifService.writeGif(url);
   }
 }
