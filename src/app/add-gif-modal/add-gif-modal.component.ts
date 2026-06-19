@@ -9,6 +9,7 @@ import {
 } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { AddGifService } from '../add-gif-service/add-gif.service';
 
 @Component({
   selector: 'app-add-gif-modal',
@@ -31,6 +32,6 @@ export class AddGifModalComponent {
   }
 
   onAddGif() {
-
+    AddGifService.writeGif();
   }
 }
