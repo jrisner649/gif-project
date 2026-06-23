@@ -31,8 +31,12 @@ export class AddGifModalComponent {
     this.isImageValid = false;
   }
 
-  onAddGif() {
+  async onAddGif() {
     const url: string = "https://tenor.com/view/phalanx-gif-21949743";
-    AddGifService.writeGif(url);
+    try {
+      await AddGifService.writeGif(url);
+    } catch (error) {
+      console.error('Failed to save GIF:', error);
+    }
   }
 }
