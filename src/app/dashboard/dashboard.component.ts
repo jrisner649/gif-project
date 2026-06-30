@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AddGifService } from '../add-gif-service/add-gif.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
-export class DashboardComponent {}
+export class DashboardComponent {
+  addGifService: AddGifService = inject(AddGifService);
+}

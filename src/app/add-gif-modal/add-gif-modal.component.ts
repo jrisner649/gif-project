@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {
@@ -9,6 +9,7 @@ import {
 } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { AddGifService } from '../add-gif-service/add-gif.service';
 
 @Component({
   selector: 'app-add-gif-modal',
@@ -17,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
   styleUrl: './add-gif-modal.component.scss',
 })
 export class AddGifModalComponent {
+  gifService = inject(AddGifService);
   userInput: string = '';
   isImageValid: boolean = true;
   imageUrl: string = '';
@@ -31,6 +33,10 @@ export class AddGifModalComponent {
   }
 
   onAddGif() {
-
+    try {
+      this.gifService.addGif(this.imageUrl);
+    } catch (error) {
+      console.error('Failed to save GIF:', error);
+    }
   }
 }
