@@ -1,13 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AddGifService {
-  public static async writeGif(gifUrl: string) {
-    const gifsString: string = localStorage.getItem('gifs') || "[]";
-    const gifs = JSON.parse(gifsString) || [];
-    gifs.push(gifUrl); 
-    localStorage.setItem('gifs', JSON.stringify(gifs));
+  public gifs = signal<Array<string>>([]);
+
+  constructor() {
+    const gifsString = localStorage.getItem('gifs') || "[]";
+    const initialGifs = JSON.parse(gifsString) || [];
+    this.gifs.set(initialGifs);
+  }
+
+  public addGif(gifUrl: string) {
+    const currentGifs = this.gifs() || [];
+    const updated = [...currentGifs, gifUrl];
+    this.gifs.set(updated);
+    localStorage.setItem('gifs', JSON.stringify(updated));
   }
 }

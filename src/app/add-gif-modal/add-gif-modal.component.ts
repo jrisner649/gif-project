@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {
@@ -18,6 +18,7 @@ import { AddGifService } from '../add-gif-service/add-gif.service';
   styleUrl: './add-gif-modal.component.scss',
 })
 export class AddGifModalComponent {
+  gifService = inject(AddGifService);
   userInput: string = '';
   isImageValid: boolean = true;
   imageUrl: string = '';
@@ -31,10 +32,9 @@ export class AddGifModalComponent {
     this.isImageValid = false;
   }
 
-  async onAddGif() {
-    const url: string = "https://tenor.com/view/phalanx-gif-21949743";
+  onAddGif() {
     try {
-      await AddGifService.writeGif(url);
+      this.gifService.addGif(this.imageUrl);
     } catch (error) {
       console.error('Failed to save GIF:', error);
     }

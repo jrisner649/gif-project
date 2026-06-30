@@ -26,17 +26,18 @@ app.get('/gif', async (req, res) => {
             throw new Error(`Failed to fetch GIF: ${response.statusText}`);
         }
 
-        const blob = await response.blob();
-        const buffer = await blob.arrayBuffer();
+        // Convert response to buffer (proper way to handle binary data in Node.js)
+        const arrayBuffer = await response.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        
         res.setHeader('Content-Type', 'image/gif');
-        return res.status(200).send(Buffer.from(buffer));
+        res.setHeader('Content-Length', buffer.length);
+        return res.status(200).send(buffer);
     }
     catch (err) {
         console.error("Failed to fetch gif:", err);
         return res.status(500).json({ status: 'error', message: 'Failed to fetch GIF' });
     }
-
-
 });
 
 // Start the server

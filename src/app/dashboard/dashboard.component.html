@@ -1,1 +1,3 @@
-<img [src]="link">
+@for ( gif of addGifService.gifs(); track gif ) {
+    <img [src]="gif + '.gif'">
+}
