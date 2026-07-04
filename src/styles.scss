@@ -3,22 +3,46 @@
 @use 'sass:map';
 
 
+// Extract red color from the palette (tone 50 — a true vibrant red;
+// the dark-scheme default of tone 80 reads as pink)
+$red-color: map.get(mat.$red-palette, 50);
+
 html {
-  color-scheme: light dark;
+  color-scheme: dark;
   @include mat.theme((
-    color: mat.$cyan-palette,
+    color: mat.$red-palette,
     typography: Roboto,
     density: 0
   ));
 
+  // Replace the pastel-pink dark-mode accents with a true red
+  @include mat.theme-overrides((
+    primary: $red-color,
+    on-primary: #ffffff,
+
+    // The red palette tints all surfaces with a warm/pink cast;
+    // force pure neutral grays for backgrounds instead
+    background: #101010,
+    on-background: #e2e2e2,
+    surface: #101010,
+    surface-dim: #101010,
+    surface-bright: #383838,
+    surface-container-lowest: #0b0b0b,
+    surface-container-low: #1b1b1b,
+    surface-container: #1f1f1f,
+    surface-container-high: #292929,
+    surface-container-highest: #343434,
+    on-surface: #e2e2e2,
+    surface-variant: #444444,
+    on-surface-variant: #c6c6c6,
+    outline: #919191,
+    outline-variant: #474747,
+  ));
 }
 
-// Extract cyan color from the palette (using tone 40 for a vibrant cyan)
-$cyan-color: map.get(mat.$cyan-palette, 80);
-
-// Apply cyan outline to the dialog
+// Apply red outline to the dialog
 .mat-mdc-dialog-container {
-  border: 3px solid $cyan-color;
+  border: 3px solid $red-color;
   border-radius: 32px;
 }
 
