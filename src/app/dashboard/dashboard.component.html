@@ -1,5 +1,12 @@
-<div class="masonry">
-  @for ( gif of addGifService.gifs(); track gif ) {
-    <img class="masonry-item" [src]="gif + '.gif'">
-  }
-</div>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <mat-sidenav >
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <div class="masonry">
+      @for ( gif of addGifService.gifs(); track gif ) {
+        <img class="masonry-item" [src]="gif + '.gif'">
+      }
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
