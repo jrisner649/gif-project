@@ -1,3 +1,11 @@
-<app-top-bar></app-top-bar>
-<app-dashboard></app-dashboard>
+<mat-sidenav-container style="width: 100vw; height: 100vh; container-background-color: none;">
+  <mat-sidenav #sidenav>
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button (click)="sidenav.toggle()">Show Sidebar</button>
+    <app-top-bar></app-top-bar>
+    <app-dashboard></app-dashboard>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
