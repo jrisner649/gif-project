@@ -21,3 +21,9 @@ $cyan-color: map.get(mat.$cyan-palette, 80);
   border: 3px solid $cyan-color;
   border-radius: 32px;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
