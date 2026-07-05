@@ -51,3 +51,16 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+// mat.theme only sets typography *tokens* that Material components read; it
+// never applies a base font to the document. Apply Roboto globally so plain
+// HTML elements (e.g. the sidebar's <h3>/<p>) inherit it too.
+body {
+  font-family: var(--mat-sys-body-large-font);
+}
+
+// Native form controls don't inherit font-family by default, so make them
+// pick up the document font as well.
+button, input, select, textarea {
+  font-family: inherit;
+}
