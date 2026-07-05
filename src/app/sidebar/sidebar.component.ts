@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  imports: [MatIconModule, MatButtonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
-export class SidebarComponent {}
+export class SidebarComponent {
+  onAddCategory() {
+    console.log('category added')
+  }
+}
