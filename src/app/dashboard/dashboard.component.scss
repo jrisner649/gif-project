@@ -23,3 +23,9 @@
   border-radius: 8px;
   break-inside: avoid;
 }
+
+.masonry-item:hover {
+  filter: brightness(115%);
+  outline-style: solid;
+  outline-color: red;
+}
