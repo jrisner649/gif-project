@@ -3,8 +3,7 @@
     <app-sidebar></app-sidebar>
   </mat-sidenav>
   <mat-sidenav-content>
-    <button (click)="sidenav.toggle()">Show Sidebar</button>
-    <app-top-bar></app-top-bar>
+    <app-top-bar (showSidebar)="sidenav.toggle()"></app-top-bar>
     <app-dashboard></app-dashboard>
   </mat-sidenav-content>
 </mat-sidenav-container>
