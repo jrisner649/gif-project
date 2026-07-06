@@ -4,4 +4,6 @@
         <mat-icon>add</mat-icon>
     </button>
 </div>
-<p>sidebar works!</p>
+@for (category of categories; track category) {
+    <h4>{{ category }}</h4>
+}

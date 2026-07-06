@@ -9,7 +9,14 @@ import { MatButtonModule } from "@angular/material/button";
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
+  categories = ["New Category"];
+
+  // constructor() {
+  //   const categoriesString: string = localStorage.getItem("categories") || "[]";
+  //   const initialCategories = JSON.parse(categoriesString) || [];
+  //   this.categories = initialCategories;
+  // }
   onAddCategory() {
-    console.log('category added')
+    this.categories.push("New Category");
   }
 }
