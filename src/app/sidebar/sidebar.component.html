@@ -1,1 +1,9 @@
-<p>sidebar works!</p>
+<div class="sidebar-header">
+    <h2>Categories</h2>
+    <button aria-label="Add a category button" title="Add a new category" (click)="onAddCategory()" matIconButton>
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+@for (category of categories; track category) {
+    <h4>{{ category }}</h4>
+}
