@@ -15,19 +15,3 @@
     column-count: 1;
   }
 }
-
-.gif-item {
-  position: relative;
-  break-inside: avoid;
-}
-
-.gif-item button {
-  display: none;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-}
-
-.gif-item:hover button {
-  display: inline-block;
-}

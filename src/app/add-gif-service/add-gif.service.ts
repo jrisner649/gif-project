@@ -18,4 +18,10 @@ export class AddGifService {
     this.gifs.set(updated);
     localStorage.setItem('gifs', JSON.stringify(updated));
   }
+
+  public removeGif(gifUrl: string) {
+    const updated = this.gifs().filter((gif) => gif !== gifUrl);
+    this.gifs.set(updated);
+    localStorage.setItem('gifs', JSON.stringify(updated));
+  }
 }
