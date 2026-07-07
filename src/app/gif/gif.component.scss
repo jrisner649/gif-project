@@ -1,0 +1,31 @@
+:host {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  break-inside: avoid;
+  overflow: hidden;
+}
+
+:host:hover {
+  filter: brightness(115%);
+  outline-style: solid;
+  outline-color: red;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+:host:hover button {
+  display: inline-block;
+}

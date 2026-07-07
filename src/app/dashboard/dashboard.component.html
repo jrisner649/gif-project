@@ -1,5 +1,5 @@
 <div class="masonry">
   @for ( gif of addGifService.gifs(); track gif ) {
-    <img class="masonry-item" [src]="gif + '.gif'">
+    <app-gif [gif]="gif"></app-gif>
   }
 </div>
