@@ -1,2 +1,4 @@
-<button (click)="onShowSidebar()">Show Sidebar</button>
+<button matIconButton [attr.aria-label]="sidebarOpen() ? 'Hide sidebar' : 'Show sidebar'" (click)="onShowSidebar()">
+  <mat-icon>{{ sidebarOpen() ? 'close' : 'menu' }}</mat-icon>
+</button>
 <button matButton="filled" (click)="onAddGIF()">Add GIF</button>
