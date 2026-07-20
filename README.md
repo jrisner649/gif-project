@@ -26,7 +26,7 @@ All data is currently persisted to the browser's `localStorage`, so your collect
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (see `package.json` for the Angular CLI/toolchain versions)
+- [Node.js](https://nodejs.org/)
 - npm
 
 ### Installation
