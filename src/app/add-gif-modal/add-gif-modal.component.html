@@ -10,6 +10,7 @@
     @if (isImageValid && userInput) {
       <img
         [src]="imageUrl"
+        (load)="onImageLoad()"
         (error)="onImageError()"
       >
     }
@@ -17,5 +18,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button matButton="outlined" mat-dialog-close>Cancel</button>
-  <button matButton="filled" [mat-dialog-close]="true" (click)="onAddGif()" cdkFocusInitial>Confirm</button>
+  <button matButton="filled" [disabled]="!canAddGif" [mat-dialog-close]="true" (click)="onAddGif()" cdkFocusInitial>Confirm</button>
 </mat-dialog-actions>

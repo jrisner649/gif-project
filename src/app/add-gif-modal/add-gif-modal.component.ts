@@ -21,18 +21,32 @@ export class AddGifModalComponent {
   gifService = inject(AddGifService);
   userInput: string = '';
   isImageValid: boolean = true;
+  isImageLoaded: boolean = false;
   imageUrl: string = '';
+
+  get canAddGif(): boolean {
+    return this.userInput.trim().length > 0 && this.isImageValid && this.isImageLoaded;
+  }
 
   updateImageUrl() {
     this.isImageValid = true;
-    this.imageUrl = this.userInput? this.userInput + '.gif' : '';
+    this.isImageLoaded = false;
+    this.imageUrl = this.userInput.trim();
+  }
+
+  onImageLoad() {
+    this.isImageLoaded = true;
   }
 
   onImageError() {
     this.isImageValid = false;
+    this.isImageLoaded = false;
   }
 
   onAddGif() {
+    if (!this.canAddGif) {
+      return;
+    }
     try {
       this.gifService.addGif(this.imageUrl);
     } catch (error) {
