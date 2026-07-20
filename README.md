@@ -6,8 +6,9 @@ Built with [Angular](https://angular.dev) and [Angular Material](https://materia
 
 ## How it works
 
-1. Click **Add GIF** in the top bar.
-2. Copy/paste a direct link to a GIF into the input field. A live preview renders as you type, and invalid links are flagged automatically.
+1. Copy the link to a GIF you would like to save.
+2. Click **Add GIF** in the top bar.
+3. Paste a direct link to a GIF into the input field. A live preview renders as you type, and invalid links are flagged automatically.
 3. Click **Confirm** to save it to your collection.
 4. Your GIFs are displayed in a masonry-style grid on the dashboard. Hover over a GIF to reveal a delete button.
 
@@ -32,57 +33,22 @@ npm install
 npm start
 ```
 
-Then open `http://localhost:4200/` in your browser. The app will automatically reload whenever you modify a source file.
-
-### Running unit tests
-
-Unit tests run on [Vitest](https://vitest.dev/):
-
-```bash
-npm test
-```
-
-### Building
-
-```bash
-npm run build
-```
-
-Build artifacts are output to the `dist/` directory.
-
-### Linting / formatting
-
-```bash
-npm run lint
-```
-
-This runs [Prettier](https://prettier.io/) across the project.
+Then open `http://localhost:4200/` in your browser. 
 
 ## Project structure
 
 ```
 src/app/
 ├── add-gif-modal/       # Dialog for pasting in a GIF link, with live preview/validation
-├── add-gif-service/      # CategoriesService + Gif/Category models, localStorage persistence
+├── add-gif-service/      # AddGifService, localStorage persistence
 ├── dashboard/            # Masonry grid that renders the GIFs in the selected category
 ├── gif/                  # Single GIF tile (image + delete action)
-├── sidebar/               # Category list and "add category" entry point
+├── sidebar/               # Category list and "add category" entry point (WIP)
 └── top-bar/               # Top navigation bar, opens the Add GIF dialog
 ```
-
-## Tech stack
-
-- [Angular](https://angular.dev) (standalone components, signals)
-- [Angular Material](https://material.angular.io) for UI components (dialog, buttons, icons, sidenav)
-- Browser `localStorage` for persistence
-- [Vitest](https://vitest.dev/) for unit testing
 
 ## Planned features
 
 - **Categorization** — organize saved GIFs into custom categories/folders, choose a category from the sidebar, and have the dashboard display only the GIFs in that category. (The underlying data model and service methods already support this; wiring up category selection end-to-end is in progress.)
 - **Search** — search across your saved GIFs to quickly find the one you want.
 - **Click-to-copy** — click a GIF in the dashboard to copy its link straight to your clipboard, ready to paste wherever you need it.
-
-## Additional resources
-
-For more information on the Angular CLI, see the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli).
