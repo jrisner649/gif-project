@@ -1,59 +1,88 @@
-# GifProject
+# GIF Project
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.1.
+A simple web app for building a personal GIF library. Find a GIF you like anywhere on the web, copy its link, paste it in, and it's saved to your collection for quick access later.
 
-## Development server
+Built with [Angular](https://angular.dev) and [Angular Material](https://material.angular.io).
 
-To start a local development server, run:
+## How it works
 
-```bash
-ng serve
-```
+1. Click **Add GIF** in the top bar.
+2. Copy/paste a direct link to a GIF into the input field. A live preview renders as you type, and invalid links are flagged automatically.
+3. Click **Confirm** to save it to your collection.
+4. Your GIFs are displayed in a masonry-style grid on the dashboard. Hover over a GIF to reveal a delete button.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+All data is currently persisted to the browser's `localStorage`, so your collection is local to whichever browser you use.
 
-## Code scaffolding
+## Getting started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Prerequisites
 
-```bash
-ng generate component component-name
-```
+- [Node.js](https://nodejs.org/) (see `package.json` for the Angular CLI/toolchain versions)
+- npm
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Installation
 
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Development server
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+Then open `http://localhost:4200/` in your browser. The app will automatically reload whenever you modify a source file.
 
-For end-to-end (e2e) testing, run:
+### Running unit tests
+
+Unit tests run on [Vitest](https://vitest.dev/):
 
 ```bash
-ng e2e
+npm test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Building
 
-## Additional Resources
+```bash
+npm run build
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Build artifacts are output to the `dist/` directory.
+
+### Linting / formatting
+
+```bash
+npm run lint
+```
+
+This runs [Prettier](https://prettier.io/) across the project.
+
+## Project structure
+
+```
+src/app/
+├── add-gif-modal/       # Dialog for pasting in a GIF link, with live preview/validation
+├── add-gif-service/      # CategoriesService + Gif/Category models, localStorage persistence
+├── dashboard/            # Masonry grid that renders the GIFs in the selected category
+├── gif/                  # Single GIF tile (image + delete action)
+├── sidebar/               # Category list and "add category" entry point
+└── top-bar/               # Top navigation bar, opens the Add GIF dialog
+```
+
+## Tech stack
+
+- [Angular](https://angular.dev) (standalone components, signals)
+- [Angular Material](https://material.angular.io) for UI components (dialog, buttons, icons, sidenav)
+- Browser `localStorage` for persistence
+- [Vitest](https://vitest.dev/) for unit testing
+
+## Planned features
+
+- **Categorization** — organize saved GIFs into custom categories/folders, choose a category from the sidebar, and have the dashboard display only the GIFs in that category. (The underlying data model and service methods already support this; wiring up category selection end-to-end is in progress.)
+- **Search** — search across your saved GIFs to quickly find the one you want.
+- **Click-to-copy** — click a GIF in the dashboard to copy its link straight to your clipboard, ready to paste wherever you need it.
+
+## Additional resources
+
+For more information on the Angular CLI, see the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli).
