@@ -6,11 +6,19 @@ Built with [Angular](https://angular.dev) and [Angular Material](https://materia
 
 ## How it works
 
-1. Copy the link to a GIF you would like to save.
-2. Click **Add GIF** in the top bar.
-3. Paste a direct link to a GIF into the input field. A live preview renders as you type, and invalid links are flagged automatically.
-4. Click **Confirm** to save it to your collection.
-5. Your GIFs are displayed in a masonry-style grid on the dashboard. Hover over a GIF to reveal a delete button.
+### 1. Copy a GIF link
+
+Find a GIF you like anywhere on the web and copy its direct link.
+
+![Copying a GIF link](docs/gifs/copy_gif.gif)
+
+### 2. Add it to your collection
+
+Click **Add GIF** in the top bar and paste the link into the input field. A live preview renders as you type, and invalid links are flagged automatically. Click **Confirm** to save it.
+
+![Adding a GIF to the collection](docs/gifs/add_gif.gif)
+
+Your GIFs are displayed in a masonry-style grid on the dashboard. Hover over a GIF to reveal a delete button.
 
 All data is currently persisted to the browser's `localStorage`, so your collection is local to whichever browser you use.
 
